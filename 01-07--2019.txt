@@ -1,0 +1,41 @@
+01.01.2019 Tallinn 2
+01.01.2019 Amsterdam 8
+01.01.2019 New York 4
+01.01.2019 Johannesburg 29
+01.01.2019 Sydney 22
+--------------------
+02.01.2019 Tallinn 1
+02.01.2019 Amsterdam 7
+02.01.2019 New York 8
+02.01.2019 Johannesburg 30
+02.01.2019 Sydney 20
+--------------------
+03.01.2019 Tallinn -5
+03.01.2019 Amsterdam 11
+03.01.2019 New York 6
+03.01.2019 Johannesburg 24
+03.01.2019 Sydney 22
+--------------------
+04.01.2019 Tallinn -8
+04.01.2019 Amsterdam 4
+04.01.2019 New York 2
+04.01.2019 Johannesburg 28
+04.01.2019 Sydney 20
+--------------------
+05.01.2019 Tallinn 3
+05.01.2019 Amsterdam 4
+05.01.2019 New York -1
+05.01.2019 Johannesburg 35
+05.01.2019 Sydney 22
+--------------------
+06.01.2019 Tallinn -11
+06.01.2019 Amsterdam 5
+06.01.2019 New York 4
+06.01.2019 Johannesburg 31
+06.01.2019 Sydney 25
+--------------------
+07.01.2019 Tallinn 4
+07.01.2019 Amsterdam 1
+07.01.2019 New York -2
+07.01.2019 Johannesburg 30
+07.01.2019 Sydney 24

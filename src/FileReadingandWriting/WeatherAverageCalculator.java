@@ -113,11 +113,11 @@ public class WeatherAverageCalculator {
     public static void main(String[] args) {
         WeatherAverageCalculator weatherAverageCalculator = new WeatherAverageCalculator();
 
-        String readFilePath = "/Users/gokhanpolat/Developer/tallinn3/01-07--2019.txt";
+        String readFilePath = "/Users/alvarangerjas/Desktop/SDA/week8Gokhan/01-07--2019.txt";
         List<WeatherPOJO> weatherPOJOList = weatherAverageCalculator.readFileAndGetWeatherPOJOList(readFilePath);
         Map<String, Double> cityAndWeatherMap = weatherAverageCalculator.getCityAndWeatherMap(weatherPOJOList);
 
-        String writeFilePath = "/Users/gokhanpolat/Developer/tallinn3/01-07--2019-average.txt";
+        String writeFilePath = "/Users/alvarangerjas/Desktop/SDA/week8Gokhan/01-07--2019-average.txt";
         weatherAverageCalculator.calculateAveragesAndWriteFile(cityAndWeatherMap, writeFilePath);
     }
 

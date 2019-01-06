@@ -1,0 +1,6 @@
+The average tempreatures between 01-07 January 2019
+Tallinn -2.0
+Amsterdam 5.71
+New York  3.0
+Johannesburg 29.57
+Sydney 22.14
