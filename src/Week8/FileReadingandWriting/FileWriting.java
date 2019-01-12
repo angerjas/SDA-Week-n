@@ -1,39 +1,41 @@
-package FileReadingandWriting;
+package Week8.FileReadingandWriting;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 
 public class FileWriting {
 
     public void writeFile(String filePath) {
-
         try {
+            // go and find file or create file if it is not exist (not creating directory, only file)
             File file = new File(filePath);
 
+            // Create a FileWriter to append already existing file
             FileWriter fileWriter = new FileWriter(file, true);
 
+            // bind created file to writer
             PrintWriter printWriter = new PrintWriter(fileWriter);
 
-            printWriter.println("Today is a good day. Some other shit i am writing");
+            // write something into file
+            printWriter.println("First sentence is not correct because today is Saturday");
 
+            // save and close the file
             printWriter.close();
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println("File path does not exist. Exception is " + e);
         }
-
     }
 
     public static void main(String[] args) {
 
         FileWriting fileWriting = new FileWriting();
 
-        String filePath = "/Users/erich/Desktop/untitled/FirstFile.txt";
+        String filePath = "/Users/gokhanpolat/Developer/tallinn3/FirstFile.txt";
         fileWriting.writeFile(filePath);
 
-        String filePath2 = "/Users/erich/Desktop/untitled/SecondFile.txt";
+        String filePath2 = "/Users/gokhanpolat/Developer/SecondFile.txt";
         fileWriting.writeFile(filePath2);
-
     }
-
 }

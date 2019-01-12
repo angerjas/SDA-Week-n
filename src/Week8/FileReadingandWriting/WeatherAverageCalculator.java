@@ -1,5 +1,4 @@
-package FileReadingandWriting;
-
+package Week8.FileReadingandWriting;
 import java.io.*;
 import java.text.DecimalFormat;
 import java.util.LinkedHashMap;
@@ -78,13 +77,22 @@ public class WeatherAverageCalculator {
     public Map<String, Double> getCityAndWeatherMap(List<WeatherPOJO> weatherPOJOList) {
 
         Map<String, Double> cityAndWeatherMap = new LinkedHashMap<>();
-        for (WeatherPOJO weatherPOJO : weatherPOJOList) {
+
+        // Same for loop as stream
+//        for (WeatherPOJO weatherPOJO : weatherPOJOList) {
+//            if (cityAndWeatherMap.get(weatherPOJO.getCity()) != null) {
+//                cityAndWeatherMap.put(weatherPOJO.getCity(), cityAndWeatherMap.get(weatherPOJO.getCity()) + weatherPOJO.getWeather());
+//            } else {
+//                cityAndWeatherMap.put(weatherPOJO.getCity(), weatherPOJO.getWeather());
+//            }
+//        }
+        weatherPOJOList.stream().forEach(weatherPOJO -> {
             if (cityAndWeatherMap.get(weatherPOJO.getCity()) != null) {
                 cityAndWeatherMap.put(weatherPOJO.getCity(), cityAndWeatherMap.get(weatherPOJO.getCity()) + weatherPOJO.getWeather());
             } else {
                 cityAndWeatherMap.put(weatherPOJO.getCity(), weatherPOJO.getWeather());
             }
-        }
+        });
 
         return cityAndWeatherMap;
     }
@@ -98,10 +106,15 @@ public class WeatherAverageCalculator {
 
             printWriter.println("The average tempreatures between 01-07 January 2019");
 
-            for (String city : cityAndWeatherMap.keySet()) {
+            // same as stream
+//            for (String city : cityAndWeatherMap.keySet()) {
+//                String line = city + " " + df.format(cityAndWeatherMap.get(city) / 7);
+//                printWriter.println(line);
+//            }
+            cityAndWeatherMap.keySet().stream().forEach(city -> {
                 String line = city + " " + df.format(cityAndWeatherMap.get(city) / 7);
                 printWriter.println(line);
-            }
+            });
 
             printWriter.close();
 
@@ -113,12 +126,11 @@ public class WeatherAverageCalculator {
     public static void main(String[] args) {
         WeatherAverageCalculator weatherAverageCalculator = new WeatherAverageCalculator();
 
-        String readFilePath = "/Users/alvarangerjas/Desktop/SDA/week8Gokhan/01-07--2019.txt";
+        String readFilePath = "/Users/gokhanpolat/Developer/tallinn3/01-07--2019.txt";
         List<WeatherPOJO> weatherPOJOList = weatherAverageCalculator.readFileAndGetWeatherPOJOList(readFilePath);
         Map<String, Double> cityAndWeatherMap = weatherAverageCalculator.getCityAndWeatherMap(weatherPOJOList);
 
-        String writeFilePath = "/Users/alvarangerjas/Desktop/SDA/week8Gokhan/01-07--2019-average.txt";
+        String writeFilePath = "/Users/gokhanpolat/Developer/tallinn3/01-07--2019-average.txt";
         weatherAverageCalculator.calculateAveragesAndWriteFile(cityAndWeatherMap, writeFilePath);
     }
-
 }
